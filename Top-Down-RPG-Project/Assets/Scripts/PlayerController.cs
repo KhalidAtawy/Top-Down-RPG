@@ -7,8 +7,11 @@ public class PlayerController : MonoBehaviour
 
     [SerializeField] private float moveSpeed = 5;
     [SerializeField] Rigidbody2D rb;
-    [SerializeField] Animator animator;
-    [SerializeField] SpriteRenderer itemSprite;
+    [SerializeField] Animator currentAnimator;
+    [SerializeField] RuntimeAnimatorController greenAnimator;
+    [SerializeField] RuntimeAnimatorController blueAnimator;
+    [SerializeField] RuntimeAnimatorController redAnimator;
+    [SerializeField] RuntimeAnimatorController pinkAnimator;
 
     Vector2 movement;
 
@@ -27,9 +30,9 @@ public class PlayerController : MonoBehaviour
 
     private void SetPlayerAnimationDirection()
     {
-        animator.SetFloat("Horizontal", movement.x);
-        animator.SetFloat("Vertical", movement.y);
-        animator.SetFloat("Speed", movement.sqrMagnitude);
+        currentAnimator.SetFloat("Horizontal", movement.x);
+        currentAnimator.SetFloat("Vertical", movement.y);
+        currentAnimator.SetFloat("Speed", movement.sqrMagnitude);
     }
 
     private void FixedUpdate()
@@ -39,8 +42,34 @@ public class PlayerController : MonoBehaviour
     }
 
 
-    public void ChangeItemColor(Color color)
+    public void ChangeItemColor(ItemsTypes itemType)
     {
+        switch (itemType)
+        {
+            case ItemsTypes.GreenSkin:
+                // todo: change player color
+                currentAnimator.runtimeAnimatorController = greenAnimator;
+                break;
 
+            case ItemsTypes.BlueSkin:
+                // todo: change player color
+                currentAnimator.runtimeAnimatorController = blueAnimator;
+                break;
+
+            case ItemsTypes.RedSkin:
+                // todo: change player color
+                currentAnimator.runtimeAnimatorController = redAnimator;
+                break;
+
+            case ItemsTypes.PinkSkin:
+                // todo: change player color
+                currentAnimator.runtimeAnimatorController = pinkAnimator;
+                break;
+
+            default:
+                // todo: change player color
+                currentAnimator.runtimeAnimatorController = greenAnimator;
+                break;
+        }
     }
 }

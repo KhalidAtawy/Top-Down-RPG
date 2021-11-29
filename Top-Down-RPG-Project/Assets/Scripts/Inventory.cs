@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
+using System.Threading.Tasks;
 
 public class Inventory : MonoBehaviour
 {
@@ -14,6 +15,8 @@ public class Inventory : MonoBehaviour
     [SerializeField] TextMeshProUGUI TotalGoldText;
     public ItemsTypes currentItem;
     public Dictionary<ItemsTypes, int> Items = new Dictionary<ItemsTypes, int>();
+    [SerializeField] List<InventoryItem> inventoryItems = new List<InventoryItem>();
+
 
     private void Awake()
     {
@@ -37,10 +40,10 @@ public class Inventory : MonoBehaviour
         currentItem = ItemsTypes.GreenSkin;
         TotalGoldText.text = goldAmount.ToString();
 
-            Items.Add(ItemsTypes.GreenSkin, 0);
-            Items.Add(ItemsTypes.BlueSkin, 0);
-            Items.Add(ItemsTypes.PinkSkin, 0);
-            Items.Add(ItemsTypes.RedSkin, 0);
+        Items.Add(ItemsTypes.GreenSkin, 0);
+        Items.Add(ItemsTypes.BlueSkin, 0);
+        Items.Add(ItemsTypes.PinkSkin, 0);
+        Items.Add(ItemsTypes.RedSkin, 0);
     }
 
     /// <summary>
@@ -88,33 +91,23 @@ public class Inventory : MonoBehaviour
     /// <param name="amountText"></param>
     public void UseItem(ItemsTypes itemType, TextMeshProUGUI amountText)
     {
-        // increase the one the player was wearing
-        Items[currentItem]++;
-        amountText.text = Items[currentItem].ToString();
-
-        switch (itemType)
+        if (Items[itemType] > 0)
         {
-            case ItemsTypes.BlueSkin:
-                // todo: change player color
-                break;
+            // increase the one the player was wearing
+            Items[currentItem]++;
+            amountText.text = Items[currentItem].ToString();
 
-            case ItemsTypes.RedSkin:
-                // todo: change player color
-                break;
+            player.GetComponent<PlayerController>().ChangeItemColor(itemType);
 
-            case ItemsTypes.PinkSkin:
-                // todo: change player color
-                break;
-
-            default:
-                // todo: change player color
-                break;
+            // decrease the one the player will wear and set it as current
+            currentItem = itemType;
+            Items[itemType]--;
+            amountText.text = Items[itemType].ToString();
         }
-
-        // decrease the one the player will wear and set it as current
-        currentItem = itemType;
-        Items[itemType]--;
-        amountText.text = Items[itemType].ToString();
+        foreach (var item in inventoryItems)
+        {
+            item.ResetUI();
+        }
     }
 }
 

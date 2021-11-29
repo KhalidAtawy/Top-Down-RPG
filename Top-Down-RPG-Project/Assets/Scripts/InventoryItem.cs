@@ -14,7 +14,7 @@ public class InventoryItem : MonoBehaviour
         {
             if (itemType == item.Key)
             {
-                amountText.text = Inventory.instance.Items[itemType].ToString();
+                ResetUI();
                 return;
             }
         }
@@ -24,6 +24,12 @@ public class InventoryItem : MonoBehaviour
     public void UseItemBtnPressed()
     {
         Inventory.instance.UseItem(itemType, amountText);
+
+    }
+
+    public void ResetUI()
+    {
+        amountText.text = Inventory.instance.Items[itemType].ToString();
     }
 
     public void HomeBtnPressed()

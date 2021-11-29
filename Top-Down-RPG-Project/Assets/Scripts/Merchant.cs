@@ -16,11 +16,15 @@ public class Merchant : MonoBehaviour
         
     }
 
+    private void OnMouseDown()
+    {
+        UIManager.instance.dialogueUI.SetActive(true);
+    }
     private void OnTriggerEnter2D(Collider2D collision)
     {
         if(collision.CompareTag("Player"))
         {
-            UIManager.instance.OpenShopAnimation();
+            UIManager.instance.dialogueUI.SetActive(true);
         }
     }
 

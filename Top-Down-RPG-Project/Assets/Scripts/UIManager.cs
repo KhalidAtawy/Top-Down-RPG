@@ -8,6 +8,8 @@ public class UIManager : MonoBehaviour
     public static UIManager instance = null;
     [SerializeField] Animator shopAnimator;
     [SerializeField] Animator InventoryAnimator;
+    public GameObject dialogueUI;
+
 
     private void Awake()
     {
@@ -17,13 +19,38 @@ public class UIManager : MonoBehaviour
             Destroy(gameObject);
     }
 
-    public void HomeBtnPressed()
+    // ===== Buttons
+    public void HomeBtnShopPressed()
     {
-        UIManager.instance.CloseShopAnimation();
+        CloseShopAnimation();
+    }
+    public void HomeBtnInventoryPressed()
+    {
+        CloseInventoryAnimation();
+    }
+    public void InventoryBtnPressed()
+    {
+        if (InventoryAnimator.gameObject.activeSelf != true)
+            OpenInventoryAnimation();
+        else
+            CloseInventoryAnimation();
     }
 
+    public void ShopOkBtnPressed()
+    {
+        dialogueUI.SetActive(false);
+        OpenShopAnimation();
+    }
+
+    public void ShopCancelBtnPressed()
+    {
+        dialogueUI.SetActive(false);
+    }
+
+    // ===== Aimations
     public void OpenShopAnimation()
     {
+        CloseInventoryAnimation();
         shopAnimator.gameObject.SetActive(true);
         shopAnimator.SetBool("CloseShop", false);
         shopAnimator.SetBool("OpenShop", true);
@@ -37,7 +64,8 @@ public class UIManager : MonoBehaviour
 
     public void OpenInventoryAnimation()
     {
-        gameObject.SetActive(true);
+        CloseShopAnimation();
+        InventoryAnimator.gameObject.SetActive(true);
         InventoryAnimator.SetBool("CloseInventory", false);
         InventoryAnimator.SetBool("OpenInventory", true);
     }
