@@ -47,6 +47,11 @@ public class UIManager : MonoBehaviour
         dialogueUI.SetActive(false);
     }
 
+    public void ExitGameBtnPressed()
+    {
+        Application.Quit();
+    }
+
     // ===== Aimations
     public void OpenShopAnimation()
     {
