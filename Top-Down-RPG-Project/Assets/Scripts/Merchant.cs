@@ -4,7 +4,6 @@ using UnityEngine;
 
 public class Merchant : MonoBehaviour
 {
-    [SerializeField] ShopManager shopUI;
     // Start is called before the first frame update
     void Start()
     {
@@ -21,7 +20,7 @@ public class Merchant : MonoBehaviour
     {
         if(collision.CompareTag("Player"))
         {
-            shopUI.OpenShopAnimation();
+            UIManager.instance.OpenShopAnimation();
         }
     }
 
@@ -29,7 +28,7 @@ public class Merchant : MonoBehaviour
     {
         if (collision.CompareTag("Player"))
         {
-            shopUI.CloseShopAnimation();
+            UIManager.instance.CloseShopAnimation();
         }
     }
 }

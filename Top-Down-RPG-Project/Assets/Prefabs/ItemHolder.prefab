@@ -33,10 +33,10 @@ RectTransform:
   m_Father: {fileID: 4682059030895034110}
   m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0.5, y: 0.5}
-  m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 170, y: 38}
-  m_SizeDelta: {x: 83.5823, y: 116.96}
+  m_AnchorMin: {x: 0.6917901, y: 0.5}
+  m_AnchorMax: {x: 0.8183322, y: 0.8880001}
+  m_AnchoredPosition: {x: 0.14657593, y: -1.9168892}
+  m_SizeDelta: {x: -0.76566553, y: 3.1662025}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &9182249250050238614
 CanvasRenderer:
@@ -120,7 +120,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 2558236837469764871}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 6238105720151961650}
+        m_TargetAssemblyTypeName: ShopItem, Assembly-CSharp
+        m_MethodName: BuyBtnPressed
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!1 &4682059030311234517
 GameObject:
   m_ObjectHideFlags: 0
@@ -154,10 +166,10 @@ RectTransform:
   m_Father: {fileID: 4682059030895034110}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0.5, y: 0.5}
-  m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -38, y: -51.479736}
-  m_SizeDelta: {x: 286, y: 103.05068}
+  m_AnchorMin: {x: 0.2662526, y: 0.043640796}
+  m_AnchorMax: {x: 0.6917901, y: 0.5}
+  m_AnchoredPosition: {x: 2.8481905, y: 0.07469177}
+  m_SizeDelta: {x: 2.6431766, y: -0.05817318}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &4682059030311234514
 CanvasRenderer:
@@ -230,10 +242,10 @@ RectTransform:
   m_Father: {fileID: 4682059030895034110}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0.5, y: 0.5}
-  m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 15.8256, y: -6.8041}
-  m_SizeDelta: {x: 449.1199, y: 207.12}
+  m_AnchorMin: {x: 0.18900001, y: 0}
+  m_AnchorMax: {x: 0.86, y: 0.9347033}
+  m_AnchoredPosition: {x: -0.3153534, y: 0.37708282}
+  m_SizeDelta: {x: 2.2398384, y: 0.7914852}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &4682059030887473405
 CanvasRenderer:
@@ -283,6 +295,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4682059030895034110}
+  - component: {fileID: 6238105720151961650}
   m_Layer: 5
   m_Name: ItemHolder
   m_TagString: Untagged
@@ -315,6 +328,23 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &6238105720151961650
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4682059030895034111}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3116f04220a0eda479febeafe14b56b0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  itemAmount: 0
+  itemType: 0
+  amountText: {fileID: 8450936173563979249}
+  priceText: {fileID: 7645182248714069430}
+  price: 0
 --- !u!1 &4682059030970714392
 GameObject:
   m_ObjectHideFlags: 0
@@ -347,10 +377,10 @@ RectTransform:
   m_Father: {fileID: 4682059030895034110}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0.5, y: 0.5}
-  m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -2, y: 54.520264}
-  m_SizeDelta: {x: 150, y: 150}
+  m_AnchorMin: {x: 0.3872986, y: 0.46417966}
+  m_AnchorMax: {x: 0.6107243, y: 1}
+  m_AnchoredPosition: {x: -1.361824, y: 3.3104553}
+  m_SizeDelta: {x: 1.2837049, y: 31.767263}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &4682059030970714405
 CanvasRenderer:
@@ -422,10 +452,10 @@ RectTransform:
   m_Father: {fileID: 3151903896438791497}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: -46.9014, y: -48.7271}
+  m_AnchorMin: {x: 0.23130165, y: 0.2522863}
+  m_AnchorMax: {x: 0.7686972, y: 0.7531993}
+  m_AnchoredPosition: {x: 0.000045776367, y: -0.26795578}
+  m_SizeDelta: {x: -1.0136098, y: -1.2763257}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &9129176795230372981
 CanvasRenderer:
@@ -455,7 +485,9 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 100
+  m_text: '0
+
+'
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -482,7 +514,7 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 28.7
+  m_fontSize: 30.95
   m_fontSizeBase: 36
   m_fontWeight: 400
   m_enableAutoSizing: 1
@@ -557,10 +589,10 @@ RectTransform:
   m_Father: {fileID: 4682059030895034110}
   m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0.5, y: 0.5}
-  m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -141, y: 38}
-  m_SizeDelta: {x: 99, y: 95.0455}
+  m_AnchorMin: {x: 0.21330334, y: 0.46417966}
+  m_AnchorMax: {x: 0.36159477, y: 0.8880001}
+  m_AnchoredPosition: {x: 0.5215759, y: -0.8530426}
+  m_SizeDelta: {x: 0.35970807, y: 1.5263098}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &9201509702399957013
 CanvasRenderer:
@@ -633,10 +665,10 @@ RectTransform:
   m_Father: {fileID: 4682059030311234516}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0.5, y: 0.5}
-  m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 35.872314, y: 0}
-  m_SizeDelta: {x: 134.981, y: 45.516}
+  m_AnchorMin: {x: 0.39215672, y: 0.27054927}
+  m_AnchorMax: {x: 0.8648318, y: 0.70400006}
+  m_AnchoredPosition: {x: -0.91046906, y: 1.3208714}
+  m_SizeDelta: {x: -0.2921691, y: 0.8134042}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &8237335110210767867
 CanvasRenderer:
@@ -693,7 +725,7 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 40.7
+  m_fontSize: 30
   m_fontSizeBase: 36
   m_fontWeight: 400
   m_enableAutoSizing: 1
@@ -768,10 +800,10 @@ RectTransform:
   m_Father: {fileID: 4682059030895034110}
   m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0.5, y: 0.5}
-  m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 168, y: -51}
-  m_SizeDelta: {x: 83.5823, y: 116.96}
+  m_AnchorMin: {x: 0.6917901, y: 0}
+  m_AnchorMax: {x: 0.8183322, y: 0.4104488}
+  m_AnchoredPosition: {x: -2.001587, y: 0.08129883}
+  m_SizeDelta: {x: -0.66410065, y: -1.5677446}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &299237963429391389
 CanvasRenderer:
@@ -855,4 +887,16 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 8871078293903147059}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 6238105720151961650}
+        m_TargetAssemblyTypeName: ShopItem, Assembly-CSharp
+        m_MethodName: SellBtnPressed
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
